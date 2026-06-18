@@ -1,3 +1,6 @@
+@import "tailwindcss/theme";
+@import "tailwindcss/utilities";
+
 :root {
   --ink: #163030;
   --ink-soft: #3d5656;
@@ -17,6 +20,14 @@
   --maxw: 1080px;
   --serif: var(--font-playfair), Georgia, serif;
   --sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  /* Support pages – Marina palette mapped to vk-* aliases */
+  --vk-green: #126e6e;
+  --vk-green-dark: #163030;
+  --vk-lime: #42c8c8;
+  --vk-lime-soft: #e3f9f9;
+  --vk-pink: #42c8c8;
+  --vk-pink-dark: #0d5252;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0 }
@@ -28,7 +39,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  padding-bottom: 84px;
+  /* padding-bottom: 84px; */
 }
 .mis{
    background: var(--mist)
@@ -403,6 +414,11 @@ footer .disclaimer { color: var(--ink-soft); font-size: .78rem; max-width: 70ch;
 .modal-field select:focus { border-color: var(--teal-deep) }
 .modal-field input::placeholder { color: var(--ink-soft); opacity: .6 }
 .modal-submit { width: 100%; justify-content: center; margin-top: 4px; padding: 14px }
+.modal-submit:disabled { opacity: .6; cursor: not-allowed; transform: none }
+.modal-error { font-size: .85rem; color: #c05858; background: rgba(210,75,75,.08); border: 1px solid rgba(210,75,75,.22); border-radius: 8px; padding: 10px 14px }
+.modal-success { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 12px 0 }
+.modal-success-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--mist); color: var(--teal-deep); font-size: 1.6rem; display: flex; align-items: center; justify-content: center; font-weight: 800 }
+.modal-success-msg { color: var(--ink-soft); font-size: .95rem; max-width: 32ch; line-height: 1.6 }
 
 /* ===== Tablet (≤1024px) ===== */
 @media (max-width: 1024px) {
@@ -432,7 +448,7 @@ footer .disclaimer { color: var(--ink-soft); font-size: .78rem; max-width: 70ch;
 
 /* ===== Mobile (≤640px) ===== */
 @media (max-width: 640px) {
-  body { padding-bottom: 72px }
+  /* body { padding-bottom: 72px } */
 
   /* Topbar */
   .topbar .wrap { justify-content: center }
