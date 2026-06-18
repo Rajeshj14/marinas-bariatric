@@ -354,6 +354,56 @@ footer .disclaimer { color: var(--ink-soft); font-size: .78rem; max-width: 70ch;
 .logo-chip.logo-image { background: transparent; border-radius: 0; padding: 0; align-items: center }
 .logo-chip.logo-image img { height: 96px; width: auto; max-width: min(320px, 54vw); object-fit: contain }
 
+/* ---------- Booking Modal ---------- */
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(22, 48, 48, .55); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center; padding: 16px;
+}
+.modal-card {
+  background: var(--white); border-radius: 22px;
+  padding: clamp(28px, 5vw, 44px); width: 100%; max-width: 440px;
+  position: relative; box-shadow: var(--shadow);
+  animation: modal-in .22s ease;
+}
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(18px) scale(.97) }
+  to   { opacity: 1; transform: translateY(0) scale(1) }
+}
+.modal-close {
+  position: absolute; top: 16px; right: 18px;
+  background: none; border: none; font-size: 1.1rem;
+  color: var(--ink-soft); cursor: pointer; line-height: 1; padding: 4px;
+}
+.modal-close:hover { color: var(--ink) }
+.modal-eyebrow {
+  font-size: .72rem; font-weight: 700; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--teal-deep);
+  background: rgba(66,200,200,.10); border: 1px solid rgba(66,200,200,.32);
+  display: inline-block; padding: 5px 12px; border-radius: 100px; margin-bottom: 10px;
+}
+.modal-title {
+  font-family: var(--serif); font-size: 1.35rem; color: var(--ink);
+  font-weight: 700; margin-bottom: 24px; line-height: 1.25;
+}
+.modal-form { display: flex; flex-direction: column; gap: 16px }
+.modal-field { display: flex; flex-direction: column; gap: 6px }
+.modal-field label {
+  font-size: .82rem; font-weight: 700; color: var(--ink); letter-spacing: .02em;
+}
+.modal-field input,
+.modal-field select {
+  width: 100%; padding: 12px 16px; border-radius: 10px;
+  border: 1.5px solid var(--line); background: var(--white);
+  font-family: var(--sans); font-size: .97rem; color: var(--ink);
+  outline: none; transition: border-color .2s ease;
+  appearance: none; -webkit-appearance: none;
+}
+.modal-field input:focus,
+.modal-field select:focus { border-color: var(--teal-deep) }
+.modal-field input::placeholder { color: var(--ink-soft); opacity: .6 }
+.modal-submit { width: 100%; justify-content: center; margin-top: 4px; padding: 14px }
+
 /* ===== Tablet (≤1024px) ===== */
 @media (max-width: 1024px) {
   /* Hero */

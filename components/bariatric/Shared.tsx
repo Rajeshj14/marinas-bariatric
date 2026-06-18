@@ -1,4 +1,6 @@
-﻿export function LogoChip() {
+﻿"use client";
+
+export function LogoChip() {
   return (
     <div className="logo-chip text-logo" aria-label="Marina's Clinic">
       <span className="logo-main">Marina&apos;s</span>
@@ -18,7 +20,8 @@ export function SectionHeading({ eyebrow, title, lead, center = false }: { eyebr
 }
 
 export function BookButton({ children, className = "btn" }: { children: React.ReactNode; className?: string }) {
-  return <a className={className} href="#book">{children}</a>;
+  const open = () => window.dispatchEvent(new CustomEvent("open-booking-modal"));
+  return <button type="button" className={className} onClick={open}>{children}</button>;
 }
 
 export function PlayButton({ small = false }: { small?: boolean }) {

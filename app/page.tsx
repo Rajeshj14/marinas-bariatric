@@ -1,4 +1,5 @@
 ﻿import AttentionBar from "@/components/bariatric/AttentionBar";
+import BookingModal from "@/components/bariatric/BookingModal";
 import BeforeAfterSection from "@/components/bariatric/BeforeAfterSection";
 import BenefitsSection from "@/components/bariatric/BenefitsSection";
 import BookingSection from "@/components/bariatric/BookingSection";
@@ -38,6 +39,7 @@ export default function Home() {
       <FinalCtaSection />
       <Footer />
       <UrgencyBar />
+      <BookingModal />
     </>
   );
 }
